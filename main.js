@@ -20,18 +20,22 @@ console.log(chickensNumber + " chickenNumber");
 let cowsNumber = getRandomInt(maximumanimal);
 console.log(cowsNumber + " cowsNumber");
 
+//Generate random number for the number of sheeps within range 20
+let sheepsNumber = getRandomInt(maximumanimal);
+console.log(sheepsNumber + " sheepsNumber");
+
 //Generate random number for the number of pigs within range 20
 let pigsNumber = getRandomInt(maximumanimal);
 console.log(pigsNumber + " pigsNumber");
 
 //totalNumber re
-let totalAnimalNumber = chickensNumber + pigsNumber + cowsNumber;
+let totalAnimalNumber = chickensNumber + pigsNumber +sheepsNumber + cowsNumber;
 console.log(totalAnimalNumber + " totalNumber");
 let farmList = new Array(totalAnimalNumber); //represent the farm
 let index = 0;
 //while loop used for fill the "farmList" with the animal names
 while (index < totalAnimalNumber) {
-    randTemp = getRandomInt(3);//0, 1 or 2 
+    randTemp = getRandomInt(4); //0, 1, 2, 3 
     switch (randTemp) {
         case 0: //0 represents chickens
             if (chickensNumber > 0) {
@@ -47,7 +51,15 @@ while (index < totalAnimalNumber) {
                 cowsNumber--;
             }
             break;
-        case 2: //2 represents pigs
+        case 2: //2 represents sheeps
+            if (sheepsNumber > 0) {
+                farmList[index] = "sheeps";
+                index++;
+                sheepsNumber--;
+            }
+            break;
+
+        case 3: //3 represents pigs
             if (pigsNumber > 0) {
                 farmList[index] = "pigs";
                 index++;
