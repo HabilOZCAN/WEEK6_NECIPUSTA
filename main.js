@@ -80,3 +80,9 @@ farmList.forEach((element, index) => element == "chicken" ? chickenIndexList.pus
 legs += chickenIndexList.length * 2; //added chicken legs;
 legs += (farmList.length - chickenIndexList.length) * 4; //pigs and cows have 4 legs =) 
 console.log("the number of all legs are here =)) = " + legs);
+//pig number calculation;
+let pigsIndexList =[];
+farmList.forEach((element, index) => element == "pigs" ? pigsIndexList.push(index) : null);
+legs -= (pigsIndexList.length)*4;
+console.log("helal legs are counted as here =)) = " + legs);
+console.log("kelle paca legs counted as ---->" +(legs-chickenIndexList.length*2));
